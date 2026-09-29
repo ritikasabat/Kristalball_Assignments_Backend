@@ -5,16 +5,24 @@ spring:
   application:
     name: military-asset-backend
   datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/military_asset_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC}
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:}
+    url: ${DB_URL:jdbc:mysql://military-asset-management-system-ritisabat6283-cd04.d.aivencloud.com:23431/defaultdb?sslMode=REQUIRED&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USERNAME:avnadmin}
+    password: ${DB_PASSWORD:AVNS_is_36tYjj4KMJwt7nCr}
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+      minimum-idle: 1
+      idle-timeout: 300000
+      max-lifetime: 1200000
   jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
       ddl-auto: update
     open-in-view: false
     properties:
       hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
   jackson:
     serialization:
