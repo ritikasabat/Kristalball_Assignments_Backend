@@ -33,4 +33,4 @@ app:
     secret: ${JWT_SECRET:MilitaryAssetMgmt-ChangeThisSecretKey-32charsMin!!}
     expiration-ms: ${JWT_EXPIRATION_MS:86400000}
   cors:
-    allowed-origins: ${FRONTEND_ORIGIN:http://localhost:5173,http://localhost:4173}
+    allowed-origins: ${FRONTEND_ORIGIN:https://kristalball-assignments.vercel.app,https://*.vercel.app,http://localhost:5173,http://localhost:4173}
